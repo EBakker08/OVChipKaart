@@ -1,23 +1,16 @@
 
 package ovChipKaart;
 
-import java.util.Scanner;
-
 public class Driver {
 
 	public static void main(String[] args) {
 
-//		Bus = 4.0 | Trein = 20.0
-		Paal paal = new Paal(4.0);
-		Kaart kaart = new Kaart(1234, 3.0, false, true);
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Wilt u 1. Inchecken 2. Uitchecken 3. Saldo Verhogen");
 		
-		int choiseInput = sc.nextInt();	// User input might also need to be changed.
+		Paal paal = new Paal(4.0);	// Hier geef je het instap tarief aan
+		Kaart kaart = new Kaart(1234, 3.0, false, true);	// Hier geef je het pasnummer, huidige saldo, of je bent ingecheckt of niet en of je pas geldig is mee
 		
+		paal.choise();
 		paal.inchecken(kaart);
-		
 	}
 
 }

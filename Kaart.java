@@ -38,4 +38,8 @@ public class Kaart {
 		return ingecheckt;
 	}
 	
+	public boolean getGeldigePas() {
+		return geldig;
+	}
+	
 }
