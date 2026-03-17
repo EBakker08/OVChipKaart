@@ -3,14 +3,16 @@ package ovChipKaart;
 
 public class Kaart {
 	
-//	Properties
+//	Properties:
 	private int pasNummer;
 	private double huidigSaldo;
 //	private date geldigTotDatum;
 	private boolean ingecheckt;
 	private boolean geldig;
 	
-//	Functions
+	
+	
+//	Functions:
 	public Kaart(int pasNummer, double huidigSaldo, boolean ingecheckt, boolean geldig) {
 		this.pasNummer = pasNummer;
 		this.huidigSaldo = huidigSaldo;
@@ -18,7 +20,7 @@ public class Kaart {
 		this.geldig = geldig;
 	}
 	
-	public void setSaldo(double huidigSaldo) {
+	public void setSaldo(double huidigSaldo) {	// Geeft de variable een waarde
 		this.huidigSaldo = huidigSaldo;
 	}
 	
@@ -26,7 +28,7 @@ public class Kaart {
 		this.ingecheckt = ingecheckt;
 	}
 	
-	public int getPasNummer() {
+	public int getPasNummer() {	// Maakt het variable toegankelijk
 		return pasNummer;
 	}
 	
