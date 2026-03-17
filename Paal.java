@@ -8,7 +8,7 @@ public class Paal {
 	
 //	Functions:
 	public Paal(double instapTarief) {
-//		this.instapTarief = instapTarief;
+		this.instapTarief = instapTarief;
 	}
 	
 	public void incheckenBus(Kaart kaart, double instapTarief) {

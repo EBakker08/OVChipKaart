@@ -16,13 +16,15 @@ public class Driver {
 		System.out.println("Wilt u 1. Inchecken 2. Uitchecken 3. Saldo Verhogen?");	// Keuze tussen de verschillende dingen die je kunt doen
 		choiseInput = sc.nextInt();
 		
-		if (choiseInput == 1) {
+		if (kaart.getGeldigePas() == false) {
+			System.out.println("Validatie error. Probeer het opnieuw of check uw pas.");
+		} else	if (choiseInput == 1) {
 			System.out.println("1. Bus of 2. trein?");	// Als de user 1 kiest dan word er gevraagt of hij/zij wilt inchecken met bus of trein
 			choiseInput = sc.nextInt();
 			
 			if (choiseInput == 1) {
 				paal.incheckenBus(kaart, 4.0);	// Als user 2 kiest dan word hij/zij ingecheckt voor bus
-			} else if (choiseInput == 2) {
+			} else	if (choiseInput == 2) {
 				paal.incheckenBus(kaart, 20.0);	// Anders als user 2 kiest dan word hij/zij ingecheckt voor trein
 			}
 		} else {
