@@ -13,6 +13,7 @@ public class Driver {
 		
 		int choiseInput;	// Nieuwe variable voor scanner
 		
+		System.out.println("Uw huidige saldo is: " + kaart.getHuidigSaldo());
 		System.out.println("Wilt u 1. Inchecken 2. Uitchecken 3. Saldo Verhogen?");	// Keuze tussen de verschillende dingen die je kunt doen
 		choiseInput = sc.nextInt();
 		

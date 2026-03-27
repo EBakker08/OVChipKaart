@@ -6,10 +6,14 @@ public class Paal {
 //	Properties:
 	private double instapTarief;
 	
+	
+	
 //	Functions:
 	public Paal(double instapTarief) {
 		this.instapTarief = instapTarief;
 	}
+	
+	
 	
 	public void incheckenBus(Kaart kaart, double instapTarief) {
 		this.instapTarief = instapTarief;
@@ -26,6 +30,8 @@ public class Paal {
 			System.out.println(instapTarief - kaart.getHuidigSaldo() + " nog nodig");	// Er word vermeld hoeveel er nog nodig is.
 		}
 	}
+	
+	
 	
 	public void incheckenTrein(Kaart kaart, double instapTarief) {
 		this.instapTarief = instapTarief;
