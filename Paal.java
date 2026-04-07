@@ -8,6 +8,22 @@ public class Paal {
 	
 	
 	
+//	Locaties:
+	Locatie groningen = new Locatie("Groningen", 10.5, 13.5);
+	Locatie leeuwarden = new Locatie("Leeuwarden", 8, 13);
+	Locatie denHelder = new Locatie("Den Helder", 5, 12);
+	Locatie arnhem = new Locatie("Arnhem", 8.5, 7);
+	Locatie nijmegen = new Locatie("Nijmegen", 8.5, 6);
+	Locatie amsterdam = new Locatie("Amsterdam", 5.5, 9);
+	Locatie utrecht = new Locatie("Utrecht", 6, 7.5);
+	Locatie rotterdam = new Locatie("Rotterdam", 4, 6.5);
+	Locatie tilburg = new Locatie("Tilburg", 6, 4.5);
+	Locatie eindhoven = new Locatie("Eindhoven", 7, 4);
+	Locatie middelburg = new Locatie("Middelburg", 1, 4.5);
+	Locatie maastricht = new Locatie("Maastricht", 8, 1);
+	
+	
+	
 //	Functions:
 	public Paal(double instapTarief) {
 		this.instapTarief = instapTarief;
@@ -27,6 +43,18 @@ public class Paal {
 			System.out.println("Niet genoeg saldo.");	// Meld dat er niet genoeg saldo is,
 			System.out.println(instapTarief - kaart.getHuidigSaldo() + " nog nodig");	// Er word vermeld hoeveel er nog nodig is.
 		}
+	}
+	
+	public void uitchecken(Kaart kaart, double instapTarief) {
+		this.instapTarief = instapTarief;
+		
+		double terugStortBedrag = instapTarief - maastricht.afstandAfgelegd(groningen);
+		kaart.setSaldo(kaart.getHuidigSaldo() - terugStortBedrag);
+		
+		kaart.setIngechekt(false);	// Je wordt uitgecheckt
+		
+		System.out.println("U bent uitgecheckt.");
+		System.out.println("Huidig Saldo: " + kaart.getHuidigSaldo());
 	}
 	
 }

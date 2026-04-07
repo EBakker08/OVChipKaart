@@ -7,34 +7,53 @@ public class Driver {
 
 	public static void main(String[] args) {
 
-		Paal paal = new Paal(4.0);	// Hier geef je het instap tarief aan
-		Kaart kaart = new Kaart(1234, 20.0, false, true);	// Hier geef je het pasnummer, huidige saldo, of je bent ingecheckt of niet en of je pas geldig is mee
-		Locatie arnhem = new Locatie("Arnhem", 8.5, 7);
-		Locatie amsterdam = new Locatie("amsterdam", 5.5, 9);
-		Locatie tilburg = new Locatie("Tilburg", 6, 4.5);
-		System.out.println(arnhem.afstandAfgelegd(tilburg));
+		Paal paal = new Paal(5.0);	// Hier geef je het instap tarief aan
+		Kaart kaart = new Kaart(1234, 50.0, false, true);	// Hier geef je het pasnummer, huidige saldo, of je bent ingecheckt of niet en of je pas geldig is mee
 		Scanner sc = new Scanner(System.in);
 		
-		int choiseInput;	// Nieuwe variable voor scanner
+		String choiseInput;	// Nieuwe variable voor scanner
 		
-		System.out.println("Uw huidige saldo is: " + kaart.getHuidigSaldo());
-		System.out.println("Wilt u 1. Inchecken 2. Uitchecken 3. Saldo Verhogen?");	// Keuze tussen de verschillende dingen die je kunt doen
-		choiseInput = sc.nextInt();
-		
-		if (kaart.getGeldigePas() == false) {
-			System.out.println("Validatie error. Probeer het opnieuw of check uw pas.");
-		} else	if (choiseInput == 1) {
-			System.out.println("1. Bus of 2. trein?");	// Als de user 1 kiest dan word er gevraagt of hij/zij wilt inchecken met bus of trein
-			choiseInput = sc.nextInt();
+		do {
 			
-			if (choiseInput == 1) {
-				paal.inchecken(kaart, 4.0);	// Als user 2 kiest dan word hij/zij ingecheckt voor bus
-			} else	if (choiseInput == 2) {
-				paal.inchecken(kaart, 20.0);	// Anders als user 2 kiest dan word hij/zij ingecheckt voor trein
+			System.out.println("Uw huidige saldo is: " + kaart.getHuidigSaldo());
+			System.out.println("Wilt u Inchecken | Uitchecken | Saldo Verhogen | Saldo opvragen | Stoppen");	// Keuze tussen de verschillende dingen die je kunt doen
+			
+			choiseInput = sc.next();
+			
+			if (kaart.getGeldigePas() == false) {
+				System.out.println("Validatie error. Probeer het opnieuw of check uw pas.");
+			} else
+				
+				if (choiseInput.equalsIgnoreCase("inchecken")) {
+				System.out.println("Bus of trein?");
+				choiseInput = sc.next();
+				if (choiseInput.equalsIgnoreCase("bus")) {
+					paal.inchecken(kaart, 5.0);
+				} else	if (choiseInput.equalsIgnoreCase("trein")) {
+					paal.inchecken(kaart, 20.0);
+				} else {
+					System.out.println("Dit is geen optie.");
+				}
+				
+			} else
+				
+				if (choiseInput.equalsIgnoreCase("uitchecken")) {
+				if (kaart.getIngecheckt() == false) {
+					System.out.println("U bent al uitgecheckt.");
+				} else {
+					paal.uitchecken(kaart, 5.0);
+//					System.out.println("2: " + kaart.getHuidigSaldo());
+				}
+				
+			} else if (choiseInput.equalsIgnoreCase("stoppen")) {
+				System.out.println("Fijne dag.");
+			} else {
+				System.out.println("Er was een error");
 			}
-		} else {
-			System.out.println("Uitchecken en Saldo verhogen worden nog toegevoegd.");
-		}
+			
+		} while (!choiseInput.equalsIgnoreCase("stoppen"));
+		
+		sc.close();
 		
 	}
 }

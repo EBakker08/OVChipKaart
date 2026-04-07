@@ -17,10 +17,9 @@ public class Locatie {
 		this.yAs = yAs;
 	}
 	
-	public double afstandAfgelegd(Locatie bestemingLocatieNaam) {
-		
-		double verschilXAs = this.xAs - bestemingLocatieNaam.xAs;
-		double verschilYAs = this.yAs - bestemingLocatieNaam.yAs;
+	public double afstandAfgelegd(Locatie bestemingLocatie) {
+		double verschilXAs = this.xAs - bestemingLocatie.xAs;
+		double verschilYAs = this.yAs - bestemingLocatie.yAs;
 		
 		double kwadraatA = verschilXAs * verschilXAs;
 		double kwadraatB = verschilYAs * verschilYAs;
@@ -29,7 +28,9 @@ public class Locatie {
 		
 		double totaleAfstand = Math.sqrt(kwadraatC);
 		
-		return totaleAfstand;
+		double reisBedrag = totaleAfstand * 0.20;
+		
+		return reisBedrag;
 	}
 	
 }

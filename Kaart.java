@@ -36,7 +36,7 @@ public class Kaart {
 		return huidigSaldo;
 	}
 	
-	public boolean getIngechekt() {
+	public boolean getIngecheckt() {
 		return ingecheckt;
 	}
 	
