@@ -42,7 +42,7 @@ public class Driver {
 					System.out.println("U bent al uitgecheckt.");
 				} else {
 					paal.uitchecken(kaart, 5.0);
-//					System.out.println("2: " + kaart.getHuidigSaldo());
+					System.out.println("2: " + kaart.getHuidigSaldo());
 				}
 				
 			} else if (choiseInput.equalsIgnoreCase("stoppen")) {
