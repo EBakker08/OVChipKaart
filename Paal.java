@@ -45,9 +45,7 @@ public class Paal {
 		}
 	}
 	
-	public void uitchecken(Kaart kaart, double instapTarief) {
-		this.instapTarief = instapTarief;
-		
+	public void uitchecken(Kaart kaart) {
 		double terugStortBedrag = instapTarief - maastricht.afstandAfgelegd(groningen);	// Hier geef je aan waar je instapt en uitstapt en dan word het reisbedrag van instaptarief afgehaald
 		kaart.setSaldo(kaart.getHuidigSaldo() + terugStortBedrag);	// Het resterende bedrag word terug gestord naar het saldo van de kaart
 		
