@@ -9,18 +9,21 @@ public class Paal {
 	
 	
 //	Locaties:
-	Locatie groningen = new Locatie("Groningen", 10.5, 13.5);
-	Locatie leeuwarden = new Locatie("Leeuwarden", 8, 13);
-	Locatie denHelder = new Locatie("Den Helder", 5, 12);
-	Locatie arnhem = new Locatie("Arnhem", 8.5, 7);
-	Locatie nijmegen = new Locatie("Nijmegen", 8.5, 6);
-	Locatie amsterdam = new Locatie("Amsterdam", 5.5, 9);
-	Locatie utrecht = new Locatie("Utrecht", 6, 7.5);
-	Locatie rotterdam = new Locatie("Rotterdam", 4, 6.5);
-	Locatie tilburg = new Locatie("Tilburg", 6, 4.5);
-	Locatie eindhoven = new Locatie("Eindhoven", 7, 4);
-	Locatie middelburg = new Locatie("Middelburg", 1, 4.5);
-	Locatie maastricht = new Locatie("Maastricht", 8, 1);
+	Locatie groningen = new Locatie("Groningen", 10.5, 13.5);	// Groningen, Groningen
+	Locatie leeuwarden = new Locatie("Leeuwarden", 8, 13);		// Leeuwarden, Friesland
+	Locatie denHelder = new Locatie("Den Helder", 5, 12);		// Den Helder, Noord-Holland
+	Locatie zwolle = new Locatie("Zwolle", 9.5, 9.5);			// Zwolle, Overijssel
+	Locatie almere = new Locatie("Almere", 6.5, 9);				// Almere, Flevoland
+	Locatie amsterdam = new Locatie("Amsterdam", 5.5, 9);		// Amsterdam, Noord-Holland
+	Locatie utrecht = new Locatie("Utrecht", 6, 7.5);			// Utrecht, Utrecht
+	Locatie arnhem = new Locatie("Arnhem", 8.5, 7);				// Arnhem, Gelderland
+	Locatie rotterdam = new Locatie("Rotterdam", 4, 6.5);		// Rotterdam, Zuid-Holland
+	Locatie nijmegen = new Locatie("Nijmegen", 8.5, 6);			// Nijmegen, Gelderland
+	Locatie denBosch = new Locatie("Den Bosch", 7, 5.5);		// Den Bosch, Noord-Brabant
+	Locatie tilburg = new Locatie("Tilburg", 6, 4.5);			// Tilburg, Noord-Brabant
+	Locatie middelburg = new Locatie("Middelburg", 1, 4.5);		// Middelburg, Zeeland
+	Locatie eindhoven = new Locatie("Eindhoven", 7.5, 4);		// Eindhoven, Noord-Brabant
+	Locatie maastricht = new Locatie("Maastricht", 8, 1);		// Maastricht, Limburg
 	
 	
 	

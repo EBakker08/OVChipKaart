@@ -11,13 +11,13 @@ public class Locatie {
 	
 	
 //	Functions:
-	public Locatie(String locatieNaam, double xAs, double yAs) {
+	public Locatie(String locatieNaam, double xAs, double yAs) {	// Hier maak je een nieuwe locatie aan.
 		this.locatieNaam = locatieNaam;
 		this.xAs = xAs;
 		this.yAs = yAs;
 	}
 	
-	public double afstandAfgelegd(Locatie bestemingLocatie) {
+	public double afstandAfgelegd(Locatie bestemingLocatie) {	// Bereken de afstand tussen de twee locaties.
 		double verschilXAs = this.xAs - bestemingLocatie.xAs;
 		double verschilYAs = this.yAs - bestemingLocatie.yAs;
 		

@@ -4,9 +4,10 @@ package ovChipKaart;
 import java.util.Scanner;
 
 public class Opwaarderen {
+	
 //	Properties
-	private double addBedrag;	// Not sure
-	private int onthoudID;	// Not sure
+	private double addBedrag;
+	private int onthoudID;
 	
 	
 	
@@ -14,8 +15,7 @@ public class Opwaarderen {
 	Scanner scanner = new Scanner(System.in);
 	
 	public void scannen(Kaart kaart) {
-		this.onthoudID = kaart.getPasNummer();
-//		System.out.println(onthoudID);
+		this.onthoudID = kaart.getPasNummer();	// Onthoud het pasnummer van de reiziger
 	}
 	
 	public void opwaarderen(Kaart kaart) {
@@ -23,41 +23,53 @@ public class Opwaarderen {
 		double choiseDouble;
 		String scanPas;
 		
-		System.out.println("Uw huidige saldo is " + kaart.getHuidigSaldo());
-		
-		System.out.println("Scan uw OV pas");
-		scanPas = scanner.next();
+		System.out.println("Uw huidige saldo is " + kaart.getHuidigSaldo());	// Laat zien wat op het moment het saldo van de reiziger is.
 		
 		if (onthoudID == kaart.getPasNummer()) {
 			System.out.println("Kies uit: 10 | 20 | 50 | Kies-bedrag");
 			choiseString = scanner.next();
 			
-			if (choiseString.equalsIgnoreCase("10")) {
-				kaart.setSaldo(kaart.getHuidigSaldo() + 10);
+			if (choiseString.equalsIgnoreCase("10")) {	// Als de reiziger 10 kiest...
+				
+				System.out.println("Scan uw OV pas");	// Scan de OV pas om te verifieren dat de reiziger de goede pas gebruikt.
+				scanPas = scanner.next();
+				
+				kaart.setSaldo(kaart.getHuidigSaldo() + 10);	// ...voeg 10 toe aan het saldo van de kaart.
 				
 				System.out.println("Uw huidige saldo is " + kaart.getHuidigSaldo());
-			} else if (choiseString.equalsIgnoreCase("20")) {
-				kaart.setSaldo(kaart.getHuidigSaldo() + 20);
+			} else if (choiseString.equalsIgnoreCase("20")) {	// Als de reiziger 20 kiest...
+				
+				System.out.println("Scan uw OV pas");	// Scan de OV pas om te verifieren dat de reiziger de goede pas gebruikt.
+				scanPas = scanner.next();
+				
+				kaart.setSaldo(kaart.getHuidigSaldo() + 20);	// ...voeg 20 toe aan het saldo van de kaart.
 				
 				System.out.println("Uw huidige saldo is " + kaart.getHuidigSaldo());
-			} else if (choiseString.equalsIgnoreCase("50")) {
-				kaart.setSaldo(kaart.getHuidigSaldo() + 50);
+			} else if (choiseString.equalsIgnoreCase("50")) {	// Als de reiziger 50 kiest...
+				
+				System.out.println("Scan uw OV pas");	// Scan de OV pas om te verifieren dat de reiziger de goede pas gebruikt.
+				scanPas = scanner.next();
+				
+				kaart.setSaldo(kaart.getHuidigSaldo() + 50);	// ...voeg 50 toe aan het saldo van de kaart.
 				
 				System.out.println("Uw huidige saldo is " + kaart.getHuidigSaldo());
-			} else if (choiseString.equalsIgnoreCase("Kies-bedrag")) {
+			} else if (choiseString.equalsIgnoreCase("Kies-bedrag")) {	// Als de reiziger een bedrag wilt kiezen...
 				System.out.println("Voer een bedrag in");
-				choiseDouble = scanner.nextInt();
+				choiseDouble = scanner.nextInt();	// ...wacht voor invoer van een bedrag naar keuze...
 				
 				addBedrag = choiseDouble;
 				
-				kaart.setSaldo(kaart.getHuidigSaldo() + addBedrag);
+				System.out.println("Scan uw OV pas");	// Scan de OV pas om te verifieren dat de reiziger de goede pas gebruikt.
+				scanPas = scanner.next();
+				
+				kaart.setSaldo(kaart.getHuidigSaldo() + addBedrag);	// ...voeg bedrag toe aan het saldo van de kaart.
 				
 				System.out.println("Uw huidige saldo is " + kaart.getHuidigSaldo());
 			} else {
-				System.out.println("Dit is geen optie.");
+				System.out.println("Dit is geen optie.");	// Als de reiziger iets anders kiest dan de keuzes die gegeven zijn.
 			}
 		} else {
-			System.out.println("Pas komt niet overeen");
+			System.out.println("Pas komt niet overeen");	// Als pas niet klopt met de onthouden ID laat dan error zien.
 		}
 	}
 	
@@ -66,15 +78,15 @@ public class Opwaarderen {
 		double aanvulBedrag;
 		String scanPas;
 		
-		System.out.println("Scan uw OV pas");
-		scanPas = scanner.next();
-		
 		if (onthoudID == kaart.getPasNummer()) {
-			System.out.println("Kies bedrag");
+			System.out.println("Kies bedrag");	// De reiziger kiest bedrag 
 			
 			choiseDouble = scanner.nextDouble();
 			
 			aanvulBedrag = choiseDouble - kaart.getHuidigSaldo();
+			
+			System.out.println("Scan uw OV pas");	// Scan de OV pas om te verifieren dat de reiziger de goede pas gebruikt.
+			scanPas = scanner.next();
 			
 			if (aanvulBedrag <= 0) {
 				System.out.println("Sorry, bedrag niet mogelijk");
@@ -93,7 +105,6 @@ public class Opwaarderen {
 	
 	public void stoppen(Kaart kaart) {
 		onthoudID = 0;
-//		System.out.println(onthoudID);
 		System.out.println("Fijne dag");
 	}
 }

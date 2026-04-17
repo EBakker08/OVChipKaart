@@ -4,9 +4,8 @@ package ovChipKaart;
 public class Kaart {
 	
 //	Properties:
-	private int pasNummer;
 	private double huidigSaldo;
-//	private date geldigTotDatum;
+	private int pasNummer;
 	private boolean ingecheckt;
 	private boolean geldig;
 	
@@ -28,7 +27,7 @@ public class Kaart {
 		this.ingecheckt = ingecheckt;
 	}
 	
-	public int getPasNummer() {	// Maakt het variable toegankelijk
+	public int getPasNummer() {	// Maak de variable toegankelijk
 		return pasNummer;
 	}
 	
