@@ -3,7 +3,7 @@ package ovChipKaart;
 
 import java.util.Scanner;
 
-public class Opwaarderen {
+public class oplaadPaal {
 	
 //	Properties
 	private double addBedrag;
@@ -89,22 +89,22 @@ public class Opwaarderen {
 			scanPas = scanner.next();
 			
 			if (aanvulBedrag <= 0) {
-				System.out.println("Sorry, bedrag niet mogelijk");
+				System.out.println("Sorry, bedrag niet mogelijk");	// Als de reiziger een bedrag kiest onder het bedrag dat hij/zij al heeft, geef een error.
 			} else {
 				kaart.setSaldo(kaart.getHuidigSaldo() + aanvulBedrag);
-				System.out.println("Huidig saldo: " + kaart.getHuidigSaldo());
+				System.out.println("Huidig saldo: " + kaart.getHuidigSaldo());	// Anders vul het bedrag aan tot wat er aangegeven is.
 			}
 		} else {
-			System.out.println("Pas komt niet overeen");
+			System.out.println("Pas komt niet overeen");	// Als de pas niet overeenkomt met de pas die onthouden is, geef een error.
 		}
 	}
 	
 	public void saldo(Kaart kaart) {
-		System.out.println("Uw huidige saldo is: " + kaart.getHuidigSaldo());
+		System.out.println("Uw huidige saldo is: " + kaart.getHuidigSaldo());	// Laat het huidige saldo dat op de kaart staat zien.
 	}
 	
 	public void stoppen(Kaart kaart) {
-		onthoudID = 0;
+		onthoudID = 0;	// Reset het ID dat onthouden wordt.
 		System.out.println("Fijne dag");
 	}
 }
