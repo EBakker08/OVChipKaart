@@ -9,7 +9,7 @@ public class Driver {
 
 		Paal paal = new Paal(5.0);	// Hier geef je het instap tarief aan
 		Kaart kaart = new Kaart(1234, 15.0, false, true);	// Hier geef je het pasnummer, huidige saldo, of je bent ingecheckt of niet en of je pas geldig is mee
-		Opwaarderen opwaarderen = new Opwaarderen();	// Dit is voor het opwaarderen
+		oplaadPaal oplaadPaal = new oplaadPaal();	// Dit is voor het opwaarderen
 		Scanner sc = new Scanner(System.in);
 		
 		String choiseInput;
@@ -42,20 +42,20 @@ public class Driver {
 			} else if (choiseInput.equalsIgnoreCase("laadpaal")) {	// Als de reiziger laadpaal kiest dan draai de do loop hier onder.
 				String opwaarderenChoise;
 				
-				opwaarderen.scannen(kaart);	// Scan en onthoud de kaart van de reiziger.
+				oplaadPaal.scannen(kaart);	// Scan en onthoud de kaart van de reiziger.
 				
 				do {	// Draai deze loop zolang de reiziger niet stop kiest.
 					System.out.println("Wilt u uw saldo Verhogen | Aanvullen | Opvragen | Stop");
 					opwaarderenChoise = sc.next();
 					
 					if (opwaarderenChoise.equalsIgnoreCase("verhogen")) {	// Als de reiziger verhogen kiest draai dan opwaarderen.opwaarderen.
-						opwaarderen.opwaarderen(kaart);
+						oplaadPaal.opwaarderen(kaart);
 					} else if (opwaarderenChoise.equalsIgnoreCase("aanvullen")) {	// Als de reiziger aanvullen kiest draai dan opwaarderen.aanvullenTot.
-						opwaarderen.aanvullenTot(kaart);
+						oplaadPaal.aanvullenTot(kaart);
 					} else if (opwaarderenChoise.equalsIgnoreCase("opvragen")) {	// Als de reiziger opvragen kiest draai dan opwaarderen.saldo.
-						opwaarderen.saldo(kaart);
+						oplaadPaal.saldo(kaart);
 					} else if (opwaarderenChoise.equalsIgnoreCase("stop")) {	// Als de reiziger stop kiest draai dan opwaarderen.stoppen.
-						opwaarderen.stoppen(kaart);
+						oplaadPaal.stoppen(kaart);
 					} else {
 						System.out.println("Dit is geen keuze.");	// Als de reiziger geen van deze keuzes maakt geef dan een error.
 					}
